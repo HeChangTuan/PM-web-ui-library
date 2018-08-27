@@ -1,6 +1,6 @@
 {
   "name": "pm-web-ui-library",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "src/components/index.js",
   "repository": "https://github.com/HeChangTuan/PM-web-ui-library.git",
   "author": "Ed Lee <jonexiu@gmail.com>",
