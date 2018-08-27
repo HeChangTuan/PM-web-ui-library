@@ -3,12 +3,12 @@ import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 
 export default {
-  input: 'src/index.js',
+  input: 'src/components/index.js',
   output: {
     file: 'build/index.js',
     format: 'cjs'
   },
-  external: ['react', 'react-dom', 'styled-components'],
+  external: ['react', 'react-dom', 'styled-components', 'prop-types'],
   plugins: [
     resolve(),
     babel({

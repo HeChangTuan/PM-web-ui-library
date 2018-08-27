@@ -1,39 +1,33 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var React = _interopDefault(require('react'));
 var styled = _interopDefault(require('styled-components'));
-var ReactDOM = _interopDefault(require('react-dom'));
+var PropTypes = _interopDefault(require('prop-types'));
 
-var taggedTemplateLiteral = function (strings, raw) {
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-};
+var Wrap = styled.div.withConfig({
+  displayName: 'Button__Wrap'
+})(['background:blue;width:100px;height:100px;']);
 
-var _templateObject = taggedTemplateLiteral(['\n  background: blue;\n  width: 100px;\n  height: 100px;\n'], ['\n  background: blue;\n  width: 100px;\n  height: 100px;\n']);
-
-var Wrap = styled.div(_templateObject);
-
-var Button = function Button() {
+var Button = function Button(_ref) {
+  var text = _ref.text;
   return React.createElement(
     Wrap,
     null,
-    'Hello'
+    React.createElement(
+      'button',
+      { type: 'button' },
+      text
+    )
   );
 };
 
-var App = function App() {
-  return React.createElement(
-    'div',
-    null,
-    React.createElement(Button, null)
-  );
+Button.propTypes = {
+  /** The description for myProp */
+  text: PropTypes.string.isRequired
 };
 
-window.onload = function () {
-  ReactDOM.render(React.createElement(App, null), document.getElementById('root'));
-};
+exports.Button = Button;
