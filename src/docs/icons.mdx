@@ -5,6 +5,7 @@ name: Icons
 import { Playground, PropsTable } from 'docz'
 import { Icon } from '../lib'
 import { Desc } from './components'
+import { colors as c } from '../lib/common'
 
 # Icons
 
@@ -13,7 +14,7 @@ import { Desc } from './components'
 <Playground>
     <Icon type='a' /><Desc>a</Desc>
     <Icon type='b' size={30} /><Desc>b</Desc>
-    <Icon type='c' color='yellow' /><Desc>c</Desc><br />
+    <Icon type='c' color={c.yellow} /><Desc>c</Desc><br />
     <Icon type='d' /><Desc>d</Desc>
     <Icon type='e' /><Desc>e</Desc>
     <Icon type='f' /><Desc>f</Desc>

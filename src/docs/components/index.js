@@ -13,11 +13,12 @@ export const Desc = styled.span`
 `
 
 export const UiWrap = styled.div`
+  padding: 20px;
   position: relative;
   display: flex;
   align-items: center;
-  width: 100px;
-  height: 100px;
+  width: ${props => props.w || '100px'};
+  height: ${props => props.h || '100px'};
   border: 1px solid ${c.line};
   border-radius: 8px;
   margin: 10px;

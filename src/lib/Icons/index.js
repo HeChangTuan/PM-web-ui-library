@@ -5,7 +5,7 @@ import { colors } from '../common'
 
 const IconEle = styled.i`
   font-size: ${props => props.size}px;
-  color: ${props => colors[props.color]};
+  color: ${props => props.color};
   line-height: 1;
   display: inline-block;
   &:before {
@@ -36,7 +36,7 @@ Icon.propTypes = {
 }
 
 Icon.defaultProps = {
-  color: 'blue',
+  color: colors.blue,
   size: 20
 }
 

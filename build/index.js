@@ -30,37 +30,17 @@ Button.propTypes = {
   text: PropTypes.string.isRequired
 };
 
-var ossPath = 'https://peoplesmedic.oss-cn-shenzhen.aliyuncs.com';
-
-var mq = {
-  mobi: 'screen and (max-width: 480px)',
-  desk: 'screen and (min-width: 481px)',
-  sml: 'screen and (max-width: 1024px)',
-  mid: 'screen and (min-width: 481px) and (max-width: 1300px)',
-  big: 'screen and (min-width: 1301px)'
-};
-
-var fontPath = ossPath + '/assets/fonts';
-var imagePath = ossPath + '/assets/images';
-
 /**
  *
- * @param {pos} Object
- * t: top,
- * l: left,
- * r: right,
- * b: bottom
+ * @param {Object} params
+ * @param {string} params.t top
+ * @param {string} params.l left
+ * @param {string} params.r right
+ * @param {string} params.b bottom
  */
-var pos = function pos(_ref) {
-  var _ref$t = _ref.t,
-      t = _ref$t === undefined ? 'auto' : _ref$t,
-      _ref$l = _ref.l,
-      l = _ref$l === undefined ? 'auto' : _ref$l,
-      _ref$r = _ref.r,
-      r = _ref$r === undefined ? 'auto' : _ref$r,
-      _ref$b = _ref.b,
-      b = _ref$b === undefined ? 'auto' : _ref$b;
-  return '\n    top: ' + t + ';\n    right: ' + r + ';\n    bottom: ' + b + ';\n    left: ' + l + ';\n  ';
+var pos = function pos() {
+  var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { t: 'auto', l: 'auto', r: 'auto', b: 'auto' };
+  return '\n    top: ' + params.t + ';\n    right: ' + params.r + ';\n    bottom: ' + params.b + ';\n    left: ' + params.l + ';\n  ';
 };
 
 /**
@@ -85,18 +65,6 @@ var size = function size(w, h) {
   return '\n    width: ' + _w + ';\n    height: ' + _h + ';\n  ';
 };
 
-var bgContain = function bgContain(url) {
-  return '\n    background-image: url(' + url + ');\n    background-size: contain;\n    background-repeat: no-repeat;\n  ';
-};
-
-var bgCover = function bgCover(url) {
-  return '\n    background-image: url(' + url + ');\n    background-size: cover;\n    background-repeat: no-repeat;\n  ';
-};
-
-var clearfix = function clearfix() {
-  return '\n  &:before,\n  &:after {\n      content: "";\n      display: table;\n  }\n  &:after {\n      clear: both;\n  }\n';
-};
-
 var colors = {
   gray: '#9b9b9b',
   grayText: '#646464',
@@ -117,35 +85,19 @@ var colors = {
   orange: '#ff8e00'
 };
 
-var common = {
-  ossPath: ossPath,
-  mq: mq,
-  fontPath: fontPath,
-  imagePath: imagePath,
-  pos: pos,
-  size: size,
-  bgContain: bgContain,
-  bgCover: bgCover,
-  clearfix: clearfix,
-  colors: colors
-};
-
-var colors$1 = common.colors;
-
-
 var IconEle = styled.i.withConfig({
   displayName: 'Icons__IconEle'
 })(['font-size:', 'px;color:', ';line-height:1;display:inline-block;&:before{font-family:\'Icon\' !important;font-style:normal !important;font-weight:normal !important;font-variant:normal !important;text-transform:none !important;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;vertical-align:top;content:attr(type);}'], function (props) {
   return props.size;
 }, function (props) {
-  return colors$1[props.color];
+  return props.color;
 });
 
 var Icon = function Icon(_ref) {
   var color = _ref.color,
       type = _ref.type,
-      size = _ref.size;
-  return React.createElement(IconEle, { type: type, color: color, size: size });
+      size$$1 = _ref.size;
+  return React.createElement(IconEle, { type: type, color: color, size: size$$1 });
 };
 
 Icon.propTypes = {
@@ -158,10 +110,202 @@ Icon.propTypes = {
 };
 
 Icon.defaultProps = {
-  color: 'blue',
+  color: colors.blue,
   size: 20
+};
+
+function genIcon(color) {
+  return React.createElement(
+    'svg',
+    { x: '0px', y: '0px', width: '24px', height: '30px', viewBox: '0 0 24 30' },
+    React.createElement(
+      'rect',
+      { x: '0', y: '10', width: '4', height: '10', fill: color, opacity: '0.2' },
+      React.createElement('animate', {
+        attributeName: 'opacity',
+        attributeType: 'XML',
+        values: '0.2; 1; .2',
+        begin: '0s',
+        dur: '0.6s',
+        repeatCount: 'indefinite'
+      }),
+      React.createElement('animate', {
+        attributeName: 'height',
+        attributeType: 'XML',
+        values: '10; 16; 10',
+        begin: '0s',
+        dur: '0.6s',
+        repeatCount: 'indefinite'
+      }),
+      React.createElement('animate', {
+        attributeName: 'y',
+        attributeType: 'XML',
+        values: '10; 6; 10',
+        begin: '0s',
+        dur: '0.6s',
+        repeatCount: 'indefinite'
+      })
+    ),
+    React.createElement(
+      'rect',
+      { x: '8', y: '10', width: '4', height: '10', fill: color, opacity: '0.2' },
+      React.createElement('animate', {
+        attributeName: 'opacity',
+        attributeType: 'XML',
+        values: '0.2; 1; .2',
+        begin: '0.15s',
+        dur: '0.6s',
+        repeatCount: 'indefinite'
+      }),
+      React.createElement('animate', {
+        attributeName: 'height',
+        attributeType: 'XML',
+        values: '10; 16; 10',
+        begin: '0.15s',
+        dur: '0.6s',
+        repeatCount: 'indefinite'
+      }),
+      React.createElement('animate', {
+        attributeName: 'y',
+        attributeType: 'XML',
+        values: '10; 6; 10',
+        begin: '0.15s',
+        dur: '0.6s',
+        repeatCount: 'indefinite'
+      })
+    ),
+    React.createElement(
+      'rect',
+      { x: '16', y: '10', width: '4', height: '10', fill: color, opacity: '0.2' },
+      React.createElement('animate', {
+        attributeName: 'opacity',
+        attributeType: 'XML',
+        values: '0.2; 1; .2',
+        begin: '0.3s',
+        dur: '0.6s',
+        repeatCount: 'indefinite'
+      }),
+      React.createElement('animate', {
+        attributeName: 'height',
+        attributeType: 'XML',
+        values: '10; 16; 10',
+        begin: '0.3s',
+        dur: '0.6s',
+        repeatCount: 'indefinite'
+      }),
+      React.createElement('animate', {
+        attributeName: 'y',
+        attributeType: 'XML',
+        values: '10; 6; 10',
+        begin: '0.3s',
+        dur: '0.6s',
+        repeatCount: 'indefinite'
+      })
+    )
+  );
+}
+
+var Wrap$1 = styled.div.withConfig({
+  displayName: 'Loader__Wrap'
+})(['position:', ';top:0;left:0;right:0;bottom:0;margin:auto;z-index:100;img{position:absolute;', ';margin:auto;left:', ';width:', ';}svg{position:absolute;', ';margin:auto;left:4px;width:19px;}'], function (props) {
+  return props.fullScreen ? 'fixed' : 'absolute';
+}, pos({ t: 0, l: 0, r: 0, b: 0 }), function (props) {
+  return props.fullScreen ? '0' : '4px';
+}, function (props) {
+  return props.fullScreen ? '24px' : '19px';
+}, pos({ t: 0, l: 0, r: 0, b: 0 }));
+
+var Bg = styled.div.withConfig({
+  displayName: 'Loader__Bg'
+})(['', ';background:', ';border-radius:', ';'], size('100%'), function (p) {
+  if (p.fullScreen) {
+    return 'rgba(255,255,255,0.9)';
+  }
+  if (p.clear) {
+    return 'rgba(255,255,255,0.7)';
+  }
+  return colors.space;
+}, function (props) {
+  return props.fullScreen ? '0' : '8px';
+});
+
+var Loader = function Loader(_ref) {
+  var _ref$fullScreen = _ref.fullScreen,
+      fullScreen = _ref$fullScreen === undefined ? false : _ref$fullScreen,
+      clear = _ref.clear,
+      iconColor = _ref.iconColor;
+
+  var color = void 0;
+  if (iconColor === 'blue' || fullScreen) {
+    color = colors.blue;
+  } else if (iconColor === 'white') {
+    color = '#FFFFFF';
+  } else {
+    color = '#333333';
+  }
+
+  return React.createElement(
+    Wrap$1,
+    { fullScreen: fullScreen },
+    React.createElement(Bg, { fullScreen: fullScreen, clear: clear }),
+    genIcon(color)
+  );
+};
+
+Loader.propTypes = {
+  /** 是否全屏 */
+  fullScreen: PropTypes.bool,
+  /** clear: true - 底色更透明 */
+  clear: PropTypes.bool,
+  /** 三个矩形的颜色: 'blue' / 'white' / default: '#333' */
+  iconColor: PropTypes.string
+};
+Loader.defaultProps = {
+  fullScreen: false,
+  clear: false,
+  iconColor: ''
+};
+
+var Wrap$2 = styled.div.withConfig({
+  displayName: 'Nothing__Wrap'
+})(['', ';align-items:center;display:flex;'], size('100%'));
+
+var Content = styled.div.withConfig({
+  displayName: 'Nothing__Content'
+})(['margin:auto;text-align:center;i{margin-bottom:10px;}span{font-size:15px;margin-bottom:10px;display:block;}']);
+
+var Nothing$$1 = function Nothing$$1(_ref) {
+  var text = _ref.text,
+      children = _ref.children;
+  return React.createElement(
+    Wrap$2,
+    null,
+    React.createElement(
+      Content,
+      null,
+      React.createElement(Icon, { color: colors.gray, type: '2', size: 50 }),
+      React.createElement(
+        'span',
+        null,
+        text
+      ),
+      children
+    )
+  );
+};
+
+Nothing$$1.propTypes = {
+  /** Icon 下面的文字 */
+  text: PropTypes.string,
+  /** 子元素 */
+  children: PropTypes.object // eslint-disable-line react/forbid-prop-types
+};
+Nothing$$1.defaultProps = {
+  text: '',
+  children: null
 };
 
 exports.Button = Button;
 exports.Icon = Icon;
-exports.common = common;
+exports.Loader = Loader;
+exports.Nothing = Nothing$$1;

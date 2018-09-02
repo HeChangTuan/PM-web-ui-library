@@ -1,0 +1,23 @@
+---
+name: Nothing
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Nothing } from '../lib'
+import { UiWrap } from './components'
+import { colors as c } from '../lib/common'
+
+# Nothing
+
+
+<PropsTable of={Nothing} />
+
+<Playground>
+  <UiWrap w='auto' h='200px'>
+    <Nothing text='我没有我没有没有'>
+      <a style={{color: c.blue, textDecoration: 'underline', fontSize: 15}}>
+        想得这么理想
+      </a>
+    </Nothing>
+  </UiWrap>
+</Playground>
