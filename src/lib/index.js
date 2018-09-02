@@ -1,5 +1,5 @@
 import Button from './Button'
 import Icon from './Icons'
-import common from './common'
+import Loader from './Loader'
 
-export { Button, Icon, common }
+export { Button, Icon, Loader }

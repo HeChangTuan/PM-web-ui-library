@@ -1,7 +1,8 @@
-import React from 'react'
+// import React from 'react'
 import styled from 'styled-components'
+import { colors as c } from '../../lib/common'
 
-const DescBox = styled.span`
+export const Desc = styled.span`
   border: 1px solid #ccc;
   font-size: 14px;
   border-radius: 4px;
@@ -11,6 +12,16 @@ const DescBox = styled.span`
   display: inline-block;
 `
 
-const Desc = ({ children }) => <DescBox>{children}</DescBox>
+export const UiWrap = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid ${c.line};
+  border-radius: 8px;
+  margin: 10px;
+  background: ${props => props.bgColor};
+`
 
-export { Desc }
+// const Desc = ({ children }) => <DescBox>{children}</DescBox>

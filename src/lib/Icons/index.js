@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
 import PropTypes from 'prop-types'
-import common from '../common'
-
-const { colors } = common
+import { colors } from '../common'
 
 const IconEle = styled.i`
   font-size: ${props => props.size}px;

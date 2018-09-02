@@ -1,6 +1,6 @@
-const ossPath = 'https://peoplesmedic.oss-cn-shenzhen.aliyuncs.com'
+export const ossPath = 'https://peoplesmedic.oss-cn-shenzhen.aliyuncs.com'
 
-const mq = {
+export const mq = {
   mobi: 'screen and (max-width: 480px)',
   desk: 'screen and (min-width: 481px)',
   sml: 'screen and (max-width: 1024px)',
@@ -8,22 +8,24 @@ const mq = {
   big: 'screen and (min-width: 1301px)'
 }
 
-const fontPath = `${ossPath}/assets/fonts`
-const imagePath = `${ossPath}/assets/images`
+export const fontPath = `${ossPath}/assets/fonts`
+export const imagePath = `${ossPath}/assets/images`
 
 /**
  *
- * @param {pos} Object
- * t: top,
- * l: left,
- * r: right,
- * b: bottom
+ * @param {Object} params
+ * @param {string} params.t top
+ * @param {string} params.l left
+ * @param {string} params.r right
+ * @param {string} params.b bottom
  */
-const pos = ({ t = 'auto', l = 'auto', r = 'auto', b = 'auto' }) => `
-    top: ${t};
-    right: ${r};
-    bottom: ${b};
-    left: ${l};
+export const pos = (
+  params = { t: 'auto', l: 'auto', r: 'auto', b: 'auto' }
+) => `
+    top: ${params.t};
+    right: ${params.r};
+    bottom: ${params.b};
+    left: ${params.l};
   `
 
 /**
@@ -33,7 +35,7 @@ const pos = ({ t = 'auto', l = 'auto', r = 'auto', b = 'auto' }) => `
  * when passed number, return ${w}px,
  * else return String
  */
-const size = (w, h) => {
+export const size = (w, h) => {
   let _w = w
   let _h = h
   if (!h) {
@@ -51,19 +53,30 @@ const size = (w, h) => {
   `
 }
 
-const bgContain = url => `
+export const bgContain = url => `
     background-image: url(${url});
     background-size: contain;
     background-repeat: no-repeat;
   `
 
-const bgCover = url => `
+export const bgCover = url => `
     background-image: url(${url});
     background-size: cover;
     background-repeat: no-repeat;
   `
 
-const colors = {
+export const clearfix = () => `
+  &:before,
+  &:after {
+      content: "";
+      display: table;
+  }
+  &:after {
+      clear: both;
+  }
+`
+
+export const colors = {
   gray: '#9b9b9b',
   grayText: '#646464',
   grayActive: '#9b9b9b',
@@ -81,15 +94,4 @@ const colors = {
   grass: '#0e874a',
   grassActive: '#0e874a',
   orange: '#ff8e00'
-}
-
-export default {
-  size,
-  colors,
-  bgContain,
-  bgCover,
-  mq,
-  fontPath,
-  imagePath,
-  pos
 }

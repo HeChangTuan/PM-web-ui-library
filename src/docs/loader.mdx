@@ -1,0 +1,20 @@
+---
+name: Button
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Loader } from '../lib'
+import { UiWrap } from './components'
+
+# Button
+
+<PropsTable of={Loader} />
+
+<Playground>
+  <UiWrap>
+    <Loader />
+  </UiWrap>
+  <UiWrap bgColor='brown'>
+    <Loader clear iconColor='blue' />
+  </UiWrap>
+</Playground>
