@@ -6,3 +6,6 @@
 .eslintrc
 doczrc.js
 index.html
+.docz
+.gitattributes
+yarn.lock

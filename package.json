@@ -1,17 +1,16 @@
 {
   "name": "pm-web-ui-library",
-  "version": "1.0.4",
+  "version": "1.0.3",
   "main": "dist/index.js",
-  "bin": {
-    "common": "dist/common.js"
-  },
   "repository": "https://github.com/HeChangTuan/PM-web-ui-library.git",
   "author": "Ed Lee <jonexiu@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --hot --config webpack.config.js",
     "build": "rollup -c rollup/rollup.config.components.js && rollup -c rollup/rollup.config.common.js",
-    "docz": "docz dev"
+    "build:cp": "yarn build && cp ./dist/* /Users/edlee/Documents/Jobs/仁仁医疗/Dev/PM-doctor-dingtalk-app/node_modules/pm-web-ui-library/dist && cp ./package.json /Users/edlee/Documents/Jobs/仁仁医疗/Dev/PM-doctor-dingtalk-app/node_modules/pm-web-ui-library",
+    "docz": "docz dev",
+    "docz:build": "docz build"
   },
   "babel": {
     "presets": [
