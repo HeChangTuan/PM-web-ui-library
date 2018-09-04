@@ -10,7 +10,7 @@
     "build": "rollup -c rollup/rollup.config.components.js && rollup -c rollup/rollup.config.common.js",
     "build:cp": "yarn build && cp ./dist/* /Users/edlee/Documents/Jobs/仁仁医疗/Dev/PM-doctor-dingtalk-app/node_modules/pm-web-ui-library/dist && cp ./package.json /Users/edlee/Documents/Jobs/仁仁医疗/Dev/PM-doctor-dingtalk-app/node_modules/pm-web-ui-library",
     "docz": "docz dev",
-    "docz:build": "docz build"
+    "build:docz": "docz build"
   },
   "babel": {
     "presets": [

@@ -1,3 +1,4 @@
 export default {
-  indexHtml: './index.html'
+  indexHtml: './index.html',
+  base: '/docz'
 }
