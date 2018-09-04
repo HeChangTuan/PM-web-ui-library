@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "webpack-dev-server --hot --config webpack.config.js",
     "build": "rollup -c rollup/rollup.config.components.js && rollup -c rollup/rollup.config.common.js",
-    "docz": "docz dev"
+    "docz": "docz dev",
+    "build:docz": "docz build"
   },
   "babel": {
     "presets": [
