@@ -2,31 +2,16 @@ import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 
+import config from './config'
+
+const { src, dest, format, external, babelConfig, commonjsConfig } = config
+
 export default {
-  input: 'src/lib/index.js',
+  input: `${src}/index.js`,
   output: {
-    file: 'build/index.js',
-    format: 'cjs'
+    file: `${dest}/index.js`,
+    format
   },
-  external: ['react', 'react-dom', 'styled-components', 'prop-types'],
-  plugins: [
-    resolve(),
-    babel({
-      exclude: 'node_modules/**' // only transpile our source code
-    }),
-    commonjs({
-      include: 'node_modules/**',
-      namedExports: {
-        'node_modules/react/index.js': [
-          'Component',
-          'PureComponent',
-          'Fragment',
-          'cloneElement',
-          'Children',
-          'createElement'
-        ],
-        'node_modules/react-is/index.js': ['isValidElementType']
-      }
-    })
-  ]
+  external,
+  plugins: [resolve(), babel(babelConfig), commonjs(commonjsConfig)]
 }

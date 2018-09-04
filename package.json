@@ -1,7 +1,10 @@
 {
   "name": "pm-web-ui-library",
   "version": "1.0.3",
-  "main": "build/index.js",
+  "main": "dist/index.js",
+  "bin": {
+    "common": "dist/common.js"
+  },
   "repository": "https://github.com/HeChangTuan/PM-web-ui-library.git",
   "author": "Ed Lee <jonexiu@gmail.com>",
   "license": "MIT",
