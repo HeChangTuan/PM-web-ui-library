@@ -4,12 +4,21 @@ import commonjs from 'rollup-plugin-commonjs'
 
 import config from './config'
 
-const { src, dest, format, external, babelConfig, commonjsConfig } = config
+const {
+  src,
+  dest,
+  format,
+  external,
+  globals,
+  babelConfig,
+  commonjsConfig
+} = config
 
 export default {
   input: `${src}/index.js`,
   output: {
     file: `${dest}/index.js`,
+    globals,
     format
   },
   external,

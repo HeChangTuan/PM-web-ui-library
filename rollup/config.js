@@ -3,6 +3,11 @@ export default {
   dest: 'dist',
   format: 'cjs',
   external: ['react', 'react-dom', 'styled-components', 'prop-types'],
+  globals: {
+    'styled-components': 'styled',
+    React: 'react',
+    PropTypes: 'proptypes'
+  },
   babelConfig: {
     exclude: 'node_modules/**' // only transpile our source code
   },
