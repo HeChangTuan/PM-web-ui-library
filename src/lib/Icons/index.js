@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { colors } from '../common'
 
-const IconEle = styled.i`
+export const IconEle = styled.i`
   font-size: ${props => props.size}px;
   color: ${props => props.color};
   line-height: 1;

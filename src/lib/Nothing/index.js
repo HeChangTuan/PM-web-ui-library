@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 import { size, colors as c } from '../common'
-import { Icon } from '..'
+import Icon from '../Icons'
 
 const Wrap = styled.div`
   ${size('100%')};

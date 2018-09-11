@@ -1,0 +1,20 @@
+---
+name: Face
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Face } from '../lib'
+import { UiWrap } from './components'
+import { colors as c } from '../lib/common'
+
+# Face
+
+
+<PropsTable of={Face} />
+
+<Playground>
+  <Face image="https://static.dingtalk.com/media/lADPBbCc1gjBkgnNBGXNBGU_1125_1125.jpg" size={40} />
+  <Face sex="男" size={60} />
+  <Face sex="女" />
+  <Face isDoctor />
+</Playground>
