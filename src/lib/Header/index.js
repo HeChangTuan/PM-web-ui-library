@@ -38,15 +38,21 @@ const Text = styled.div`
   flex-wrap: wrap;
 `
 
-const Header = ({ text, children, bgColor = '#fff', fixed, font }) => {
-  const fontStyle = font || {}
-
+const Header = ({ text, childLeft, childRight, bgColor = '#fff', fixed }) => {
+  const textEle = text && (
+    <Text>
+      <h2>{text}</h2>
+    </Text>
+  )
   return (
-    <Wrap fixed={fixed} bgColor={bgColor} h={children ? 'auto' : '46px'}>
-      <Text>
-        <h2 style={{ ...fontStyle }}>{text}</h2>
-      </Text>
-      <aside>{children}</aside>
+    <Wrap
+      fixed={fixed}
+      bgColor={bgColor}
+      h={childLeft || childRight ? 'auto' : '46px'}
+    >
+      {textEle}
+      {!text && childLeft}
+      <aside>{childRight}</aside>
     </Wrap>
   )
 }
@@ -54,8 +60,10 @@ const Header = ({ text, children, bgColor = '#fff', fixed, font }) => {
 Header.propTypes = {
   /** 文字内容 */
   text: PropTypes.string,
-  /** 子元素 */
-  children: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** 左边子元素 */
+  childLeft: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  /** 右边子元素 */
+  childRight: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** 背景颜色，#fff, #000 等 */
   bgColor: PropTypes.string,
   /** 是否固定在页面顶部 */
@@ -64,7 +72,8 @@ Header.propTypes = {
 
 Header.defaultProps = {
   text: '',
-  children: null,
+  childLeft: null,
+  childRight: null,
   bgColor: '#fff',
   fixed: false
 }

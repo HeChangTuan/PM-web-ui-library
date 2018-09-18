@@ -17,8 +17,10 @@ import { colors as c } from '../lib/common'
     <Header text='巨好看的页面'/>
   </UiWrap>
   <UiWrap w='375px' h='100px'>
-    <Header text='巨好看的页面' bgColor={c.blue}>
-      <Face image="https://static.dingtalk.com/media/lADPBbCc1gjBkgnNBGXNBGU_1125_1125.jpg" size={24} />
-    </Header>
+    <Header
+      text='巨好看的页面'
+      bgColor={c.blue}
+      childRight={<Face image="https://static.dingtalk.com/media/lADPBbCc1gjBkgnNBGXNBGU_1125_1125.jpg" size={24} />}
+    />
   </UiWrap>
 </Playground>

@@ -29,11 +29,19 @@ const Image = styled.div`
   margin: auto;
 `
 
+const ChildWrap = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+`
+
 const FaceIcon = styled(IconEle)`
   margin: auto;
 `
 
-const Face = ({ size, image, sex, isDoctor = false }) => {
+const Face = ({ size, image, sex, isDoctor = false, children }) => {
   const imageEle = image ? <Image image={image} /> : null
 
   let bgColor = c.space
@@ -52,6 +60,7 @@ const Face = ({ size, image, sex, isDoctor = false }) => {
     <Wrap bgColor={bgColor} size={size}>
       {iconEle}
       {imageEle}
+      <ChildWrap>{children}</ChildWrap>
     </Wrap>
   )
 }
@@ -64,14 +73,17 @@ Face.propTypes = {
   /** Sex ('男' / '女') */
   sex: PropTypes.string,
   /** 是否为医生头像 */
-  isDoctor: PropTypes.bool
+  isDoctor: PropTypes.bool,
+  /** 子元素 */
+  children: PropTypes.object // eslint-disable-line react/forbid-prop-types
 }
 
 Face.defaultProps = {
   size: 30,
   image: null,
   sex: null,
-  isDoctor: false
+  isDoctor: false,
+  children: null
 }
 
 export default Face
