@@ -80,6 +80,7 @@ export const colors = {
   gray: '#9b9b9b',
   grayText: '#646464',
   grayActive: '#9b9b9b',
+  grayDark: '#4A4A4A',
   line: '#d8d8d8',
   space: '#ebebeb',
   active: 'linear-gradient(to right, #ffffff 0%, #ebebeb 100%)',
