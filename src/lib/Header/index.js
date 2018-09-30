@@ -14,6 +14,7 @@ const Wrap = styled.div`
   position: ${p => (p.fixed ? 'fixed' : 'relative')};
   background: ${p => p.bgColor};
   height: ${p => p.h};
+  z-index: ${p => p.fixed ? 10 : 'auto'};
   h2 {
     color: ${p => (p.bgColor !== '#fff' ? '#fff' : c.grayText)};
   }
