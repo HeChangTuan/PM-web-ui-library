@@ -96,3 +96,5 @@ export const colors = {
   grassActive: '#0e874a',
   orange: '#ff8e00'
 }
+
+export const transitionFunc = 'cubic-bezier(0.6, 0, 0.4, 1)'

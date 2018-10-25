@@ -7,7 +7,7 @@ const Base = styled.button`
   padding: 9px 14px;
   cursor: pointer;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
   transition: all 0.2s ease-out;
 `
@@ -42,6 +42,7 @@ const Solid = styled(Base)`
     color: #fff;
     border: 1px solid ${p => hoverBg[p.color || 'blue']};
     background: ${p => hoverBg[p.color || 'blue']};
+    outline: 0;
   }
 `
 
