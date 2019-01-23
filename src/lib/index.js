@@ -8,6 +8,7 @@ import Badge from './Badge'
 import FamilyMark from './FamilyMark'
 import MyDoctorMark from './MyDoctorMark'
 import Header from './Header'
+import TabBar from './TabBar'
 
 export {
   Button,
@@ -19,5 +20,6 @@ export {
   Badge,
   FamilyMark,
   MyDoctorMark,
-  Header
+  Header,
+  TabBar
 }

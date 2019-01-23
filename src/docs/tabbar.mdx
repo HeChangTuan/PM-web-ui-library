@@ -1,0 +1,21 @@
+---
+name: TabBar
+---
+
+import { Playground, PropsTable } from 'docz'
+import { TabBar } from '../lib'
+import { UiWrap } from './components'
+import { colors as c } from '../lib/common'
+
+# TabBar
+
+<PropsTable of={TabBar} />
+
+<Playground>
+  <UiWrap w='375px' h='200px'>
+    <TabBar items={[
+      {icon: 'j', text: '很好', onClick: () => alert('很好')},
+      {icon: 'P', text: '不好', onClick: () => alert('不好'), blue: true }
+    ]}></TabBar>
+  </UiWrap>
+</Playground>
